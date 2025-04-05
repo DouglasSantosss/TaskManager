@@ -10,7 +10,10 @@ Project Overview
 
 ERD Screenshot
 
-![ERD Screenshot](TaskManager-2.png)
+
+
+![ERD Screenshot](Images/TaskManager-2.png)
+
 
 Business Rules
 

@@ -1,23 +1,24 @@
-const form = document.getElementById("taskForm");
+const taskForm = document.getElementById("taskForm");
+const taskName = document.getElementById("taskName");
+const taskDescription = document.getElementById("taskDescription");
+const taskStatus = document.getElementById("taskStatus");
 
-form.addEventListener("submit", function (e) {
+taskForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const taskName = document.getElementById("taskName").value;
-  const taskDescription = document.getElementById("taskDescription").value;
-  const taskStatus = document.getElementById("taskStatus").value;
-
-  const taskObj = {
-    name: taskName,
-    description: taskDescription,
-    status: taskStatus
+  const task = {
+    name: taskName.value,
+    description: taskDescription.value,
+    status: taskStatus.value
   };
 
-  console.log("Submitted Task:", taskObj);
-  alert("Task submitted! Check console for details.");
-  
-  
+  console.log("Task submitted:", task);
 });
+
+
+
+
+
 
 
   

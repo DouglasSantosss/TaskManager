@@ -3,7 +3,7 @@ const mysql = require('mysql2');
 const app = express();
 const port = 3000;
 
-// Middleware to parse JSON and URL-encoded data
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -39,7 +39,7 @@ app.post('/register', (req, res) => {
   });
 });
 
-// Login endpoint (simplified version)
+
 app.post('/login', (req, res) => {
   const { email, password } = req.body;
   const sql = 'SELECT * FROM USER WHERE email = ? AND password = ?';
@@ -69,7 +69,7 @@ app.post('/add-task', (req, res) => {
   });
 });
 
-// Endpoint to get tasks for a specific user
+
 app.get('/tasks/:user_id', (req, res) => {
   const userId = req.params.user_id;
   const sql = 'SELECT * FROM TASK WHERE user_id = ?';

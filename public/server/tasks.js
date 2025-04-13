@@ -1,17 +1,23 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("taskForm");
-  
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-  
-      const task = {
-        title: form.title.value,
-        description: form.description.value,
-        status: form.status.value
-      };
-      console.log("JS file is connected");
+const form = document.getElementById("taskForm");
 
-      console.log("New Task:", task);
-    });
-  });
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const taskName = document.getElementById("taskName").value;
+  const taskDescription = document.getElementById("taskDescription").value;
+  const taskStatus = document.getElementById("taskStatus").value;
+
+  const taskObj = {
+    name: taskName,
+    description: taskDescription,
+    status: taskStatus
+  };
+
+  console.log("Submitted Task:", taskObj);
+  alert("Task submitted! Check console for details.");
+  
+  
+});
+
+
   

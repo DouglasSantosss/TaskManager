@@ -1,10 +1,9 @@
-
 <!-- Login Info -->
 <!DOCTYPE html>
 <html>
 <head>
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav>
@@ -13,10 +12,11 @@
         <a href="tasks.html">Tasks</a>
     </nav>
     <h2>Login</h2>
-    <form>
-        <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Password" required>
+    <form id="loginForm">
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
         <input type="submit" value="Login">
     </form>
+    <script src="server/user.js"></script>
 </body>
-</html
+</html>

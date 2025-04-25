@@ -21,7 +21,7 @@ router.post('/register', (req, res) => {
     });
 });
 
-// LOGIN USER
+
 router.post('/login', (req, res) => {
     const { email, password } = req.body;
 

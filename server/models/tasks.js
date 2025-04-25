@@ -1,7 +1,7 @@
 const { query } = require("./db_connect");
 
 async function getAllTasks() {
-  const sql = "SELECT * FROM tasks ORDER BY id DESC";
+  const sql = "SELECT * FROM tasks";
   return await query(sql);
 }
 

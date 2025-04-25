@@ -11,23 +11,28 @@
     <a href="tasks.html">Tasks</a>
   </nav>
 
-  <h2>Task Manager</h2>
-
+  <h2>Create a Task</h2>
   <form id="taskForm">
-    <input type="text" id="taskName" name="title" placeholder="Task Title" required>
-    <textarea id="taskDescription" name="description" placeholder="Task Description"></textarea>
-    <select id="taskStatus" name="status" required>
+    <input type="text" id="taskName" placeholder="Title" required><br>
+    <textarea id="taskDescription" placeholder="Description"></textarea><br>
+    <select id="taskStatus">
       <option value="To-Do">To-Do</option>
       <option value="In Progress">In Progress</option>
       <option value="Completed">Completed</option>
-    </select>
-    <input type="submit" value="Add Task">
+    </select><br>
+    <button type="submit">Add Task</button>
   </form>
 
-  <div id="task-list"></div>
+  <h2>Create a Subtask</h2>
+  <form id="subtaskForm">
+    <input type="text" id="subtaskTitle" placeholder="Subtask Title" required><br>
+    <input type="number" id="taskId" placeholder="Parent Task ID" required><br>
+    <button type="submit">Add Subtask</button>
+  </form>
 
+  <ul id="taskList"></ul>
 
-  <script src="server/tasks.js"></script>
+  <script src="tasks.js"></script>
 </body>
 </html>
 

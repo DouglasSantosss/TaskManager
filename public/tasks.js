@@ -2,9 +2,6 @@
 // keep url or live server will be broken
 const BASE_URL = 'http://localhost:3000';
 
-// Form handlers for creating tasks & subtasks
-// ───────────────────────────────────────────────────────────
-
 document.getElementById('taskForm').addEventListener('submit', async (e) => {
   e.preventDefault();
   const title       = document.getElementById('taskTitle').value;

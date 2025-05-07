@@ -1,38 +1,58 @@
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Tasks</title>
+  <meta charset="UTF-8">
+  <title>Task Manager</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <nav>
-    <a href="register.html">Register</a>
-    <a href="login.html">Login</a>
-    <a href="tasks.html">Tasks</a>
+    <a href="tasks.html" id="tasksLink">Tasks</a>
+    <a href="#" id="logoutLink">Logout</a>
   </nav>
 
-  <h2>Create a Task</h2>
-  <form id="taskForm">
-    <input type="text" id="taskName" placeholder="Title" required><br>
-    <textarea id="taskDescription" placeholder="Description"></textarea><br>
-    <select id="taskStatus">
-      <option value="To-Do">To-Do</option>
-      <option value="In Progress">In Progress</option>
-      <option value="Completed">Completed</option>
-    </select><br>
-    <button type="submit">Add Task</button>
-  </form>
+  <main>
+    <section>
+      <h2>Create a Task</h2>
+      <form id="taskForm">
+        <input type="text" id="taskTitle" placeholder="Title" required><br>
+        <textarea id="taskDescription" placeholder="Description"></textarea><br>
+        <select id="taskStatus">
+          <option value="pending">To-Do</option>
+          <option value="in progress">In Progress</option>
+          <option value="completed">Completed</option>
+        </select><br>
+        <button type="submit">Add Task</button>
+      </form>
+    </section>
 
-  <h2>Create a Subtask</h2>
-  <form id="subtaskForm">
-    <input type="text" id="subtaskTitle" placeholder="Subtask Title" required><br>
-    <input type="number" id="taskId" placeholder="Parent Task ID" required><br>
-    <button type="submit">Add Subtask</button>
-  </form>
+    <section>
+      <h2>Create a Subtask</h2>
+      <form id="subtaskForm">
+        <input type="text" id="subtaskTitle" placeholder="Subtask Title" required><br>
+        <input type="number" id="taskId" placeholder="Parent Task ID" required><br>
+        <button type="submit">Add Subtask</button>
+      </form>
+    </section>
 
-  <ul id="taskList"></ul>
+    <section>
+      <h2>Your Tasks</h2>
+      
+      <div id="taskList"></div>
+    </section>
+  </main>
 
   <script src="tasks.js"></script>
+  <script>
+    // Show logout link if logged in only
+    const logoutLink = document.getElementById('logoutLink');
+    if (localStorage.getItem('loggedIn') === 'true') {
+      logoutLink.style.display = 'inline';
+    }
+    logoutLink.addEventListener('click', () => {
+      localStorage.removeItem('loggedIn');
+      window.location.href = 'login.html';
+    });
+  </script>
 </body>
 </html>
-

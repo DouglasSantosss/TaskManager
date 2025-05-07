@@ -10,24 +10,24 @@ async function createTable() {
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
   `;
-  await query(sql);
+  query(sql);
 }
 
 async function getAllUsers() {
   const sql = "SELECT * FROM users ORDER BY id ASC";
-  return await query(sql);
+  return query(sql);
 }
 
 async function register(user) {
   const sql = `INSERT INTO users (firstName, lastName, email, password)
-               VALUES (?, ?, ?, ?)`;
+  VALUES (?, ?, ?, ?)`;
   const params = [user.firstName, user.lastName, user.email, user.password];
-  await query(sql, params);
+  query(sql, params);
 }
 
 async function login(email, password) {
   const sql = `SELECT * FROM users WHERE email = ? AND password = ?`;
-  const results = await query(sql, [email, password]);
+  const results = query(sql, [email, password]);
   return results[0];
 }
 
